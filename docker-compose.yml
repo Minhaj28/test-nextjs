@@ -1,0 +1,56 @@
+version: '3.5'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: test-nextjs
+    ports:
+      - '3005:3005'
+    volumes:
+      - .:/app
+      - /app/node_modules
+      
+
+## only build
+# docker compose build
+## run command with build
+# docker compose up --build
+
+## run command
+# docker compose up
+
+## down command
+# docker compose down
+
+## see images
+# docker images
+
+## see running container
+# docker ps
+
+## see all container
+# docker ps -a
+
+
+### Remove Containers:
+## Remove a specific container
+# docker rm <container_id_or_name>
+
+## Remove all stopped containers
+# docker container prune
+
+## Force-remove all containers (stopped or running)
+# docker rm -f $(docker ps -aq)
+
+
+### Remove Images:
+## Remove a specific image
+# docker rmi <image_id_or_name>
+
+## Remove all images(untagged)
+# docker image prune
+
+## Force-remove all images
+# docker rmi -f $(docker images -q)
